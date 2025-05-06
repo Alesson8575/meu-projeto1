@@ -3,83 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Simples</title>
+    <title>Meu Blog Simples</title>
     <style>
         body {
             font-family: sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .menu-bar {
-            background-color: #333;
-            color: #fff;
-            width: 100%;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        .menu-bar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: inline-block;
-        }
-
-        .menu-bar li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        .menu-bar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 8px 12px;
-            transition: color 0.3s ease;
-        }
-
-        .menu-bar a:hover {
-            color: #ddd;
-        }
-
-        .content-box {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 50px;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
-        }
-
-        .content-box h1 {
+            margin: 20px;
+            background-color: #f8f8f8;
             color: #333;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #222;
+            margin-bottom: 5px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
             margin-bottom: 15px;
         }
 
-        .content-box p {
-            color: #666;
+        h2 {
+            font-size: 1.5em;
+            color: #444;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .post {
+            margin-bottom: 25px;
+        }
+
+        .post-title {
+            font-size: 1.2em;
+            color: #337ab7;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .post-content {
+            color: #555;
             line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .post-meta {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .categories h2 {
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        .categories ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .categories li {
+            margin-bottom: 5px;
+            color: #555;
         }
     </style>
 </head>
 <body>
-    <div class="menu-bar">
-        <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
+    <h1>Bem-vindo ao Meu Blog</h1>
+    <p>Este é um blog simples criado apenas com HTML.</p>
+
+    <h2>Últimas Postagens</h2>
+
+    <div class="post">
+        <h3 class="post-title">Primeira Postagem</h3>
+        <p class="post-content">Este é o conteúdo da minha primeira postagem no blog. Aqui posso compartilhar minhas ideias e pensamentos.</p>
+        <p class="post-meta">Publicado em: 01/01/2024</p>
     </div>
 
-    <div class="content-box">
-        <h1>Bem-vindo ao Menu Simples</h1>
-        <p>Este é um exemplo de menu simples com uma caixa de conteúdo. O menu é responsivo e possui uma transição suave ao passar o mouse sobre os itens. A caixa de conteúdo está centralizada na página e possui um visual limpo e moderno.</p>
+    <div class="post">
+        <h3 class="post-title">Segunda Postagem</h3>
+        <p class="post-content">Esta é a minha segunda postagem. Continuo compartilhando minhas experiências e conhecimentos.</p>
+        <p class="post-meta">Publicado em: 02/01/2024</p>
+    </div>
+
+    <div class="categories">
+        <h2>Categorias</h2>
+        <ul>
+            <li>Tecnologia</li>
+            <li>Programação</li>
+            <li>Desenvolvimento Web</li>
+            <li>HTML</li>
+        </ul>
     </div>
 </body>
 </html>
