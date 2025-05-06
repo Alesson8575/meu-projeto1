@@ -3,98 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog Simples</title>
+    <title>Carros e Bicicletas</title>
     <style>
         body {
-            font-family: sans-serif;
-            margin: 20px;
-            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 24px;
             color: #333;
+            margin-bottom: 20px;
         }
 
-        h1 {
-            font-size: 2em;
-            color: #222;
-            margin-bottom: 5px;
-        }
-
-        p {
-            color: #555;
-            line-height: 1.6;
+        .product-card {
+            background-color: #111;
+            color: #fff;
+            padding: 20px;
             margin-bottom: 15px;
+            border-radius: 8px;
+            text-align: left;
         }
 
-        h2 {
-            font-size: 1.5em;
-            color: #444;
-            margin-top: 30px;
+        .product-title {
+            font-size: 18px;
             margin-bottom: 10px;
         }
 
-        .post {
-            margin-bottom: 25px;
-        }
-
-        .post-title {
-            font-size: 1.2em;
-            color: #337ab7;
-            margin-top: 0;
-            margin-bottom: 5px;
-        }
-
-        .post-content {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 8px;
-        }
-
-        .post-meta {
-            color: #777;
-            font-size: 0.9em;
-        }
-
-        .categories h2 {
-            margin-top: 40px;
+        .product-description {
+            font-size: 14px;
             margin-bottom: 15px;
         }
 
-        .categories ul {
-            list-style-type: disc;
-            padding-left: 20px;
+        .buy-button {
+            background-color: #ffc107;
+            color: #000;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .categories li {
-            margin-bottom: 5px;
-            color: #555;
+        .buy-button:hover {
+            background-color: #ff9800;
         }
     </style>
 </head>
 <body>
-    <h1>Bem-vindo ao Meu Blog</h1>
-    <p>Este é um blog simples criado apenas com HTML.</p>
+    <div class="container">
+        <h1 class="section-title">Carros e Bicicletas</h1>
 
-    <h2>Últimas Postagens</h2>
+        <div class="product-card">
+            <h2 class="product-title">Carro: R$ 1999</h2>
+            <p class="product-description">Carro modelo 2045, com 200km rodados.</p>
+            <button class="buy-button">Comprar Carro</button>
+        </div>
 
-    <div class="post">
-        <h3 class="post-title">Primeira Postagem</h3>
-        <p class="post-content">Este é o conteúdo da minha primeira postagem no blog. Aqui posso compartilhar minhas ideias e pensamentos.</p>
-        <p class="post-meta">Publicado em: 01/01/2024</p>
-    </div>
-
-    <div class="post">
-        <h3 class="post-title">Segunda Postagem</h3>
-        <p class="post-content">Esta é a minha segunda postagem. Continuo compartilhando minhas experiências e conhecimentos.</p>
-        <p class="post-meta">Publicado em: 02/01/2024</p>
-    </div>
-
-    <div class="categories">
-        <h2>Categorias</h2>
-        <ul>
-            <li>Tecnologia</li>
-            <li>Programação</li>
-            <li>Desenvolvimento Web</li>
-            <li>HTML</li>
-        </ul>
+        <div class="product-card">
+            <h2 class="product-title">Bicicleta: R$ 199</h2>
+            <p class="product-description">Bicicleta modelo 2050, com 20km rodados.</p>
+            <button class="buy-button">Comprar Bicicleta</button>
+        </div>
     </div>
 </body>
 </html>
