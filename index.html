@@ -3,78 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carros e Bicicletas</title>
+    <title>Menu Simples</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+        .menu-bar {
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            padding: 15px 0;
             text-align: center;
         }
 
-        .section-title {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
+        .menu-bar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
         }
 
-        .product-card {
-            background-color: #111;
+        .menu-bar li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .menu-bar a {
             color: #fff;
-            padding: 20px;
-            margin-bottom: 15px;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: color 0.3s ease;
+        }
+
+        .menu-bar a:hover {
+            color: #ddd;
+        }
+
+        .content-box {
+            background-color: #fff;
+            padding: 30px;
             border-radius: 8px;
-            text-align: left;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
         }
 
-        .product-title {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .product-description {
-            font-size: 14px;
+        .content-box h1 {
+            color: #333;
             margin-bottom: 15px;
         }
 
-        .buy-button {
-            background-color: #ffc107;
-            color: #000;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .buy-button:hover {
-            background-color: #ff9800;
+        .content-box p {
+            color: #666;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="section-title">Carros e Bicicletas</h1>
+    <div class="menu-bar">
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </div>
 
-        <div class="product-card">
-            <h2 class="product-title">Carro: R$ 1999</h2>
-            <p class="product-description">Carro modelo 2045, com 200km rodados.</p>
-            <button class="buy-button">Comprar Carro</button>
-        </div>
-
-        <div class="product-card">
-            <h2 class="product-title">Bicicleta: R$ 199</h2>
-            <p class="product-description">Bicicleta modelo 2050, com 20km rodados.</p>
-            <button class="buy-button">Comprar Bicicleta</button>
-        </div>
+    <div class="content-box">
+        <h1>Bem-vindo ao Menu Simples</h1>
+        <p>Este é um exemplo de menu simples com uma caixa de conteúdo. O menu é responsivo e possui uma transição suave ao passar o mouse sobre os itens. A caixa de conteúdo está centralizada na página e possui um visual limpo e moderno.</p>
     </div>
 </body>
 </html>
