@@ -3,85 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Menu Simples</title>
     <style>
         body {
             font-family: sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             margin: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .login-container {
+        .menu-bar {
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .menu-bar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+
+        .menu-bar li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .menu-bar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: color 0.3s ease;
+        }
+
+        .menu-bar a:hover {
+            color: #ddd;
+        }
+
+        .content-box {
             background-color: #fff;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            margin-top: 50px;
+            width: 80%;
+            max-width: 600px;
             text-align: center;
         }
 
-        h2 {
-            color: #1877f2;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
+        .content-box h1 {
+            color: #333;
             margin-bottom: 15px;
-            text-align: left;
         }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #65676b;
-            font-size: 0.9rem;
-        }
-
-        input[type="email"],
-        input[type="password"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 1rem;
-        }
-
-        button {
-            background-color: #1877f2;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            padding: 12px 20px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #166fe5;
+        .content-box p {
+            color: #666;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form>
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
-            </div>
-            <div class="form-group">
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
-            </div>
-            <button type="submit">Entrar</button>
-        </form>
+    <div class="menu-bar">
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </div>
+
+    <div class="content-box">
+        <h1>Bem-vindo ao Menu Simples</h1>
+        <p>Este é um exemplo de menu simples com uma caixa de conteúdo. O menu é responsivo e possui uma transição suave ao passar o mouse sobre os itens. A caixa de conteúdo está centralizada na página e possui um visual limpo e moderno.</p>
     </div>
 </body>
 </html>
