@@ -1,85 +1,111 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Simples</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .menu-bar {
-            background-color: #333;
-            color: #fff;
-            width: 100%;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        .menu-bar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: inline-block;
-        }
-
-        .menu-bar li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        .menu-bar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 8px 12px;
-            transition: color 0.3s ease;
-        }
-
-        .menu-bar a:hover {
-            color: #ddd;
-        }
-
-        .content-box {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 50px;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
-        }
-
-        .content-box h1 {
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .content-box p {
-            color: #666;
-            line-height: 1.6;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD Profissional</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    form input, form button {
+      padding: 10px;
+      margin: 10px 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    .actions button {
+      margin: 0 5px;
+    }
+  </style>
 </head>
 <body>
-    <div class="menu-bar">
-        <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </div>
+  <div class="container">
+    <h1>CRUD Profissional</h1>
+    <form id="form">
+      <input type="text" id="nome" placeholder="Nome" required />
+      <input type="text" id="email" placeholder="Email" required />
+      <button type="submit">Criar</button>
+    </form>
 
-    <div class="content-box">
-        <h1>Bem-vindo ao Menu Simples</h1>
-        <p>Este é um exemplo de menu simples com uma caixa de conteúdo. O menu é responsivo e possui uma transição suave ao passar o mouse sobre os itens. A caixa de conteúdo está centralizada na página e possui um visual limpo e moderno.</p>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-corpo">
+        <!-- Dados inseridos aparecerão aqui -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let dados = [];
+    const form = document.getElementById('form');
+    const tabela = document.getElementById('tabela-corpo');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const id = Date.now();
+      dados.push({ id, nome, email });
+      form.reset();
+      renderTabela();
+    });
+
+    function renderTabela() {
+      tabela.innerHTML = '';
+      dados.forEach((item) => {
+        const linha = document.createElement('tr');
+        linha.innerHTML = `
+          <td><input value="${item.nome}" onchange="editar(${item.id}, 'nome', this.value)" /></td>
+          <td><input value="${item.email}" onchange="editar(${item.id}, 'email', this.value)" /></td>
+          <td class="actions">
+            <button onclick="deletar(${item.id})">Deletar</button>
+          </td>
+        `;
+        tabela.appendChild(linha);
+      });
+    }
+
+    function editar(id, campo, valor) {
+      const item = dados.find(d => d.id === id);
+      if (item) item[campo] = valor;
+    }
+
+    function deletar(id) {
+      dados = dados.filter(d => d.id !== id);
+      renderTabela();
+    }
+  </script>
 </body>
 </html>
